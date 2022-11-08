@@ -2,9 +2,9 @@ public class Account {
     private String name;
     private int accountNumber;
     private int balance;
-    private boolean deposit;
+    private int deposit;
 
-    public Account(String name, int accountNumber, int balance, boolean deposit) {
+    public Account(String name, int accountNumber, int balance, int deposit) {
         this.name = name;
         this.accountNumber = accountNumber;
         this.balance = balance;
@@ -13,4 +13,5 @@ public class Account {
     public void print(){
         System.out.println(this.name + " " + this.accountNumber + " " + this.balance + " " + this.deposit);
     }
+
 }
