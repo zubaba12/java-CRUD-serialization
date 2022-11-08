@@ -10,4 +10,7 @@ public class Account {
         this.balance = balance;
         this.deposit = deposit;
     }
+    public void print(){
+        System.out.println(this.name + " " + this.accountNumber + " " + this.balance + " " + this.deposit);
+    }
 }
