@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -6,7 +7,7 @@ public class ATM {
 
     Scanner scan = new Scanner(System.in);
     int amount;
-    int balance = 0;
+    int balance;
     int deposit;
 
 
@@ -27,7 +28,7 @@ public class ATM {
 
         System.out.println("Your balance is: " + balance);
 
-        System.out.println("How much would you like to deposit?");
+        System.out.println("\nHow much would you like to deposit?");
         deposit = scan.nextInt();
         scan.nextLine();
 
@@ -37,8 +38,11 @@ public class ATM {
 
         this.printAccounts();
     }
+//    public void setBalance(){
+//        balance + deposit = balance;
+//    }
     public void updateBalance(){
-        System.out.println("Your balance is " + balance + deposit + " How much do you want deposit?");
+        System.out.println("Your balance is " + (balance + deposit) + "\nHow much do you want deposit?");
         amount = scan.nextInt();
         if (amount != 0) {
             balance = balance + amount;
@@ -57,8 +61,77 @@ public class ATM {
         }
 
     }
+//            for (Integer act : accounts.keySet()){
+////        Product p;//= new Product("toothpaste", "minty fresh", 3.49, 1);
+//        if(act == iD){
+//            //todo: update this product
+//            this.accounts.remove(act);
+//        }
+//    }
+//public class ATM {
+    public static void saveDate(Account e){
+//        public static void serialize(Account e){
+        try{
+            FileOutputStream fileOut = new FileOutputStream("object.ser");
+            // ^ opening a connect to a new file and allowing to connect
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            // ^ streaming data from an object into a file
+            out.writeObject(e);
+            // take this object and i'm lobbing it
+            out.close();
+            // close it once we are done with the file
+            fileOut.close();
+            // close it once we are done with the file
+            System.out.println("Serialized data is saved!");
 
-    //create: create an account
+
+        }catch (IOException i) {
+            i.printStackTrace();
+            // history of all the methods that were called - allows us to see where the code went wrong.
+            //principle of a stack is similar to pringles - last in, first out
+        }
+
+    }
+    public static void loadDate(){
+                HashMap<String, String> newHashMap = null;
+//        Account e = null;
+        // this create an object of type employee to receive data from file or return
+
+        Account e = null; // this create an object of type employee to receive data from file or return
+
+        try {
+            // read object from a file
+            FileInputStream file = new FileInputStream("object.ser");
+            // create a connect to a file
+            ObjectInputStream in = new ObjectInputStream(file);
+
+            // method for deserialization for an object
+            e = (Account) in.readObject();
+            // ^ read object and convert data to type Employee
+
+            in.close();
+            file.close();
+
+            System.out.println("Object has been deserialized");
+            System.out.println(e.name);
+
+
+        } catch (IOException i){
+            i.printStackTrace();
+
+        }catch (ClassNotFoundException c){
+            c.printStackTrace();
+        }
+
+
+    }
+
+}
+
+
+
+
+//create: create an account
     //read: read your transaction/balance
     //update: update/deposit money
     //delete: delete/cancel transaction; withdraw money
@@ -67,4 +140,4 @@ public class ATM {
     //3: Previous transaction \n" + " ---> read
     //4: Calculate transaction \n" + " --> create
     //5: Exit \n"; ---------------------->
-}
+//}
