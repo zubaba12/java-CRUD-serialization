@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -34,6 +35,12 @@ public class Main {
 
         }
     public static void main(String[] args) {
+        Account account = new Account();
+        account.getName();
+        account.getAccountNumber();
+        account.getBalance();
+        account.getDeposit();
+        account.print();
     selection();
     ATM.saveDate();
     ATM.loadDate();

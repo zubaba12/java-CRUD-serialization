@@ -69,14 +69,13 @@ public class ATM {
 //        }
 //    }
 //public class ATM {
-    public static void saveDate(Account e){
-//        public static void serialize(Account e){
+    public static void saveDate(HashMap<Integer, Account> accounts){
         try{
             FileOutputStream fileOut = new FileOutputStream("object.ser");
             // ^ opening a connect to a new file and allowing to connect
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             // ^ streaming data from an object into a file
-            out.writeObject(e);
+            out.writeObject(accounts);
             // take this object and i'm lobbing it
             out.close();
             // close it once we are done with the file
