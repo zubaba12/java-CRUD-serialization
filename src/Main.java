@@ -64,18 +64,3 @@ public class Main {
 
 
 
-
-//        When you're done head over to https://github.com
-//        and follow this tutorial to set up SSH authentication
-//        Once you have an SSH key linked to your local
-//        machine create a new github repository called
-//        java-CRUD-serialization. The repository should
-//        be public. Don't select the option to add a
-//        README (it'll mess up your upload).
-
-//        Check out the photo below to see how to copy your repository ssh-url, find it in your new repo and add it to your project in intelliJ by opening the terminal and putting in the command
-//        git remote add origin _____ replacing the _____ with the url you copied from github.
-//        Once that is connected you should be able to run the command git push origin master from your IntelliJ and send your files to github!
-//        Refresh your github project window and you should see your files.
-//        (if this part doesn't work no worries, we'll show the github process next week)
-//        Slack me your repository on github when you're done
