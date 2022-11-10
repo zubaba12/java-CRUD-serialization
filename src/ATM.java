@@ -57,14 +57,8 @@ public class ATM {
         }
 
     }
-//            for (Integer act : accounts.keySet()){
-////        Product p;//= new Product("toothpaste", "minty fresh", 3.49, 1);
-//        if(act == iD){
-//            //todo: update this product
-//            this.accounts.remove(act);
-//        }
-//    }
-//public class ATM {
+
+            //todo: update this product
     public static void saveData(){
         try{
             FileOutputStream fileOut = new FileOutputStream("atm.ser");
