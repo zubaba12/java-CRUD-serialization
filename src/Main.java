@@ -47,13 +47,6 @@ public class Main {
         }
 
     public static void main(String[] args) {
-//        Account account = new Account();
-//        account.getName();
-//        account.getAccountNumber();
-//        account.getBalance();
-//        account.getDeposit();
-//        account.print();
-//        ATM.loadData();
 
         selection();
 //        ATM.saveData();
