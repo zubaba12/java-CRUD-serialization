@@ -38,9 +38,7 @@ public class ATM {
 
         this.printAccounts();
     }
-//    public void setBalance(){
-//        balance + deposit = balance;
-//    }
+
     public void updateBalance(){
         System.out.println("Your balance is " + (balance + deposit) + "\nHow much do you want deposit?");
         amount = scan.nextInt();
@@ -50,8 +48,6 @@ public class ATM {
     }
     }
     public void deleteWithdraw(){
-//        System.out.println("Enter the amount you want to withdraw: ");
-//        amount = scan.nextInt();
 
         if (balance >= amount) {
             balance = balance - amount;
