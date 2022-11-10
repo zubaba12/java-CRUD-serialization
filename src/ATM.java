@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class ATM {
-    HashMap<Integer, Account> accounts = new HashMap<>();
+    static HashMap<Integer, Account> accounts = new HashMap<>();
 
     Scanner scan = new Scanner(System.in);
     int amount;
@@ -69,9 +69,9 @@ public class ATM {
 //        }
 //    }
 //public class ATM {
-    public static void saveDate(HashMap<Integer, Account> accounts){
+    public static void saveData(){
         try{
-            FileOutputStream fileOut = new FileOutputStream("object.ser");
+            FileOutputStream fileOut = new FileOutputStream("atm.ser");
             // ^ opening a connect to a new file and allowing to connect
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             // ^ streaming data from an object into a file
@@ -91,28 +91,25 @@ public class ATM {
         }
 
     }
-    public static void loadDate(){
-                HashMap<String, String> newHashMap = null;
-//        Account e = null;
-        // this create an object of type employee to receive data from file or return
+    public static void loadData(){
 
-        Account e = null; // this create an object of type employee to receive data from file or return
+        // this create an object of type employee to receive data from file or return
 
         try {
             // read object from a file
-            FileInputStream file = new FileInputStream("object.ser");
+            FileInputStream file = new FileInputStream("atm.ser");
             // create a connect to a file
             ObjectInputStream in = new ObjectInputStream(file);
 
             // method for deserialization for an object
-            e = (Account) in.readObject();
+            accounts = (HashMap<Integer, Account>) in.readObject();
             // ^ read object and convert data to type Employee
 
             in.close();
             file.close();
 
             System.out.println("Object has been deserialized");
-            System.out.println(e.name);
+            System.out.println(accounts.values());
 
 
         } catch (IOException i){
